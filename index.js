@@ -26,8 +26,8 @@ class Calculator {
 	#rightHandOperand;
 
 	constructor() {
-		this.leftHandOperand = 0;
-		this.rightHandOperand = 0;
+		this.#leftHandOperand = 0;
+		this.#rightHandOperand = 0;
 	}
 	
 	applyOperator(operator) {
