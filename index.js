@@ -31,16 +31,16 @@ class Calculator {
 	}
 	
 	applyOperator(operator) {
-		this.leftHandOperand = operator(leftHandOperand, rightHandOperand);
-		this.rightHandOperand = 0;
+		this.#leftHandOperand = operator(this.#leftHandOperand, this.#rightHandOperand);
+		this.#rightHandOperand = 0;
 	}
 	
 
 	setLeftHandOperand(operand) {
-		this.leftHandOperand = operand;
+		this.#leftHandOperand = operand;
 	}
 
 	setRightHandOperand(operand) {
-		this.leftHandOperand = operand;
+		this.#leftHandOperand = operand;
 	}
 }
