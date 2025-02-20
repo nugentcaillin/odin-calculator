@@ -2,25 +2,29 @@
 // collection of binary operators to be used with calculator
 class Operators {
 
-	add(leftHandOperand, rightHandOperand) {
+	static add(leftHandOperand, rightHandOperand) {
 
 	}
 
-	subtract(leftHandOperand, rightHandOperand) {
+	static subtract(leftHandOperand, rightHandOperand) {
 
 	}
 
-	divide(leftHandOperand, rightHandOperand) {
+	static divide(leftHandOperand, rightHandOperand) {
 
 	}
 
-	multiply(leftHandOperand, rightHandOperand) {
+	static multiply(leftHandOperand, rightHandOperand) {
 
 	}
 
 }
 
 class Calculator {
+	
+	#leftHandOperand;
+	#rightHandOperand;
+
 	constructor() {
 		this.leftHandOperand = 0;
 		this.rightHandOperand = 0;
@@ -30,6 +34,7 @@ class Calculator {
 		this.leftHandOperand = operator(leftHandOperand, rightHandOperand);
 		this.rightHandOperand = 0;
 	}
+	
 
 	setLeftHandOperand(operand) {
 		this.leftHandOperand = operand;
