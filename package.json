@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Calculator made for the Odin Project fundamentals",
   "main": "index.js",
+	"type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "dev": "http-server"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "devDependencies": {
     "http-server": "^14.1.1",
     "jest": "^29.7.0"
+  },
+  "jest": {
+		"transform": {}
   }
 }
