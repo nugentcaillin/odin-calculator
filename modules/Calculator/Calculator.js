@@ -6,8 +6,8 @@ class Calculator {
 	#operator;
 
 	constructor() {
-		this.#leftHandOperand = 0;
-		this.#rightHandOperand = 0;
+		this.#leftHandOperand = null;
+		this.#rightHandOperand = null;
 		this.#operator = null;
 	}
 
@@ -15,7 +15,7 @@ class Calculator {
 		if (this.#operator) {
 			this.#leftHandOperand = 
 				this.#operator(this.#leftHandOperand, this.#rightHandOperand);
-			this.#rightHandOperand = 0;
+			this.#rightHandOperand = null;
 			this.setOperator(null);
 		}
 	}
