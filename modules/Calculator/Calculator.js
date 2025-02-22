@@ -19,17 +19,29 @@ class Calculator {
 			this.setOperator(null);
 		}
 	}
+	
+	getLeftHandOperand() {
+		return this.#leftHandOperand;
+	}
 
 	setLeftHandOperand(operand) {
 		this.#leftHandOperand = operand;
 	}
 
-	setOperator(operator) {
-		this.#operator = operator;
+	getRightHandOperand() {
+		return this.#rightHandOperand;
 	}
 
 	setRightHandOperand(operand) {
 		this.#rightHandOperand = operand;
+	}
+	
+	getOperator() {
+		return this.#operator;
+	}
+
+	setOperator(operator) {
+		this.#operator = operator;
 	}
 }
 
