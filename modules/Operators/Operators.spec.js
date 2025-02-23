@@ -1,4 +1,5 @@
 import { Operators } from "./Operators";
+import { SyntaxError } from "../SyntaxError/SyntaxError";
 
 describe("Add", () => {
 	it("Works with two positive numbers", () => {
@@ -14,7 +15,9 @@ describe("Add", () => {
 		expect(Operators.add(1.4, 4.1)).toBeCloseTo(5.5, 2)
 	})
 	it("Raises syntax error if second argument ommitted", () => {
-		expect(Operators.add(4)).toEqual(Operators.SYNTAX_ERROR);
+		expect(() => {
+			Operators.add(4)
+		}).toThrow(new SyntaxError("Second argument is missing"));
 	})
 })
 
@@ -32,7 +35,9 @@ describe("Subtract", () => {
 		expect(Operators.subtract(4.1, 1.2)).toBeCloseTo(2.9, 2)
 	})
 	it("Raises syntax error if second argument ommitted", () => {
-		expect(Operators.subtract(4)).toEqual(Operators.SYNTAX_ERROR);
+		expect(() => {
+			Operators.subtract(4)
+		}).toThrow(new SyntaxError("Second argument is missing"));
 	})
 })
 
@@ -53,7 +58,14 @@ describe("Divide", () => {
 		expect(Operators.divide(1, 3)).toBeCloseTo(0.33, 2);
 	})
 	it("Raises syntax error if second argument ommitted", () => {
-		expect(Operators.divide(4)).toEqual(Operators.SYNTAX_ERROR);
+		expect(() => {
+			Operators.divide(4)
+		}).toThrow(new SyntaxError("Second argument is missing"));
+	})
+	it("Raises syntax error if dividing by zero", () => {
+		expect(() => {
+			Operators.divide(4, 0)
+		}).toThrow(new SyntaxError("Divide by zero error"));
 	})
 })
 
@@ -71,7 +83,31 @@ describe("Multiply", () => {
 		expect(Operators.multiply(1.3, 2)).toBeCloseTo(2.6, 2);
 	})
 	it("Raises syntax error if second argument ommitted", () => {
-		expect(Operators.multiply(4)).toEqual(Operators.SYNTAX_ERROR);
+		expect(() => {
+			Operators.multiply(4)
+		}).toThrow(new SyntaxError("Second argument is missing"));
+	})
+})
+
+
+
+describe("Multiply", () => {
+	it("Works with two positive numbers", () => {
+		expect(Operators.multiply(1, 4)).toEqual(4);
+	})
+	it("works with two negative number", () => {
+		expect(Operators.multiply(-1, -4)).toEqual(4);
+	})
+	it("works with one negative and one positive number", () => {
+		expect(Operators.multiply(1, -4)).toEqual(-4);
+	})
+	it("works with decimal numbers", () => {
+		expect(Operators.multiply(1.3, 2)).toBeCloseTo(2.6, 2);
+	})
+	it("Raises syntax error if second argument ommitted", () => {
+		expect(() => {
+			Operators.multiply(4)
+		}).toThrow(new SyntaxError("Second argument is missing"));
 	})
 })
 

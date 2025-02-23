@@ -33,6 +33,12 @@ class Calculator {
 	}
 
 	setRightHandOperand(operand) {
+		if (!this.#leftHandOperand) {
+			throw new SyntaxError("Can't set Right hand operand without left hand operand");
+		}
+		if (!this.#operator) {
+			throw new SyntaxError("Can't set Right hand operand without operator")
+		}
 		this.#rightHandOperand = operand;
 	}
 	
@@ -41,6 +47,9 @@ class Calculator {
 	}
 
 	setOperator(operator) {
+		if (!this.#leftHandOperand) {
+			throw new SyntaxError("Can't set operator without Left hand Operand");
+		}
 		this.#operator = operator;
 	}
 }
